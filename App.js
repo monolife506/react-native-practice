@@ -28,6 +28,7 @@ export default class extends React.Component
       isLoading: false, 
       temp, 
       condition: weather[0].main,
+      description: weather[0].description
     });
   }
 
@@ -60,7 +61,7 @@ export default class extends React.Component
 
   render()
   {
-    let { isLoading, temp, condition } = this.state;
-    return isLoading ? <Loading /> : <Weather temp={Math.round(temp)} condition={condition}/>;
+    let { isLoading, temp, condition, description } = this.state;
+    return isLoading ? <Loading /> : <Weather temp={Math.round(temp)} condition={condition} description={description}/>;
   }
 }
